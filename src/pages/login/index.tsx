@@ -1,10 +1,10 @@
 import './style.css'
 
-const LoginPage = () => {
+const Login = () => {
   return (
-    <div className='login-page'>
+    <div className='login'>
       this is login-page
     </div>
   )
 }
-export default LoginPage
+export default Login
