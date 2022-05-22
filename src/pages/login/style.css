@@ -1,4 +1,9 @@
-.login{
-  font-size: 30px;
-  font-weight: 600;
+.login-page{
+  text-align: center;
+}
+.content{
+  font-size: 26px;
+}
+.loginBtn{
+  width: 130px;
 }

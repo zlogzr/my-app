@@ -1,46 +1,43 @@
-import React, { Component, Suspense } from 'react'
-import { HashRouter as Router, Switch } from 'react-router-dom'
+import { Component, lazy, Suspense } from 'react'
+import { HashRouter as Router, Redirect, Switch } from 'react-router-dom'
 import { renderRoutes } from 'react-router-config'
-import './style.css'
+import { ConfigProvider, Spin } from 'bellejs'
+import ZhCN from 'bellejs/es/locale/zh_CN'
 
-const { lazy } = React
+// import ManagePage from '../pages/manage'
+// import LoginPage from '../pages/login'
 
-const Manage = lazy(() => import('../pages/manage'))
-const Login = lazy(() => import('../pages/login'))
+const ManagePage = lazy(() => import('../pages/manage'))
+const LoginPage = lazy(() => import('../pages/login'))
 
-// 总路由
 const allRouters = [
   {
     path: '/manage',
     exact: true,
-    component: Manage,
-    title: '管控台页面',
+    component: ManagePage,
+    title: 'manage',
   },
   {
     path: '/login',
     exact: true,
-    component: Login,
-    title: '登录页面',
+    component: LoginPage,
+    title: 'login',
   },
 ]
-// 兜底 登录页面
-allRouters.push({
-  path: '/',
-  exact: false,
-  component: Login,
-  title: '重定向'
-})
 
 class AppRouter extends Component {
   render() {
     return (
-      <Router>
-        <Suspense fallback={<div>正在加载中...</div>}>
-          <Switch>
-            {renderRoutes(allRouters)}
-          </Switch>
-        </Suspense >
-      </Router>
+      <ConfigProvider locale={ZhCN}>
+        <Suspense fallback={<Spin style={{ margin: '10px auto' }} />}>
+          <Router>
+            <Switch>
+              <Redirect exact from='/' to='/login' />
+              {renderRoutes(allRouters.map((item) => ({ ...item, key: item.path })))}
+            </Switch>
+          </Router>
+        </Suspense>
+      </ConfigProvider >
     )
   }
 }
