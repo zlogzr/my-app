@@ -7,6 +7,7 @@ const ManagePage = (props: any) => {
     let a = false
     if (a) {
       console.log(222)
+      
     }
     props.history.push('/login')
   }
