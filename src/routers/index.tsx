@@ -4,11 +4,11 @@ import { renderRoutes } from 'react-router-config'
 import { ConfigProvider, Spin } from 'bellejs'
 import ZhCN from 'bellejs/es/locale/zh_CN'
 
-// import ManagePage from '../pages/manage'
-// import LoginPage from '../pages/login'
+// import ManagePage from 'Pages/manage'
+// import LoginPage from 'Pages/login'
 
-const ManagePage = lazy(() => import('../pages/manage'))
-const LoginPage = lazy(() => import('../pages/login'))
+const ManagePage = lazy(() => import('Pages/manage'))
+const LoginPage = lazy(() => import('Pages/login'))
 
 const allRouters = [
   {
@@ -29,15 +29,21 @@ class AppRouter extends Component {
   render() {
     return (
       <ConfigProvider locale={ZhCN}>
-        <Suspense fallback={<Spin style={{ margin: '10px auto' }} />}>
+        <Suspense
+          fallback={
+            <div style={{ marginTop: '16px', textAlign: 'center' }}>
+              <Spin />
+            </div>
+          }
+        >
           <Router>
             <Switch>
-              <Redirect exact from='/' to='/login' />
-              {renderRoutes(allRouters.map((item) => ({ ...item, key: item.path })))}
+              <Redirect exact from="/" to="/login" />
+              {renderRoutes(allRouters.map(item => ({ ...item, key: item.path })))}
             </Switch>
           </Router>
         </Suspense>
-      </ConfigProvider >
+      </ConfigProvider>
     )
   }
 }
