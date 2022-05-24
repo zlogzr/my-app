@@ -1,6 +1,6 @@
 module.exports = {
   processors: [],
-  ignoreFiles: ['*.js', '*.tsx', '*.ts', '*.tsx', '*.json', '*.png', '*.eot', '*.ttf', '*.woff', '*.css'],
+  ignoreFiles: [],
   plugins: ['stylelint-order'],
   extends: ['stylelint-config-standard', 'stylelint-config-css-modules'],
   rules: {

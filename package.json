@@ -26,7 +26,8 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint:less": "stylelint src/**/*.less --fix --custom-syntax postcss-less"
   },
   "eslintConfig": {
     "extends": [
