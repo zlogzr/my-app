@@ -1,4 +1,4 @@
 {
-  "./src/**/*.{ts,tsx}":  ["pretty-quick --staged", "eslint --cache --fix", "git add"],
-  "./src/**/*.{less,css}": ["pretty-quick --staged", "git add"]
+  "./src/**/*.{ts,tsx}":  ["pretty-quick --staged", "eslint --cache --fix"],
+  "./src/**/*.{less,css}": ["pretty-quick --staged"]
 }
