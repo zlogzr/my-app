@@ -15,7 +15,7 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-    "prettier/prettier": 2, // 这项配置 对于不符合prettier规范的写法，eslint会提示报错
+    "prettier/prettier": 0, // 这项配置 对于不符合prettier规范的写法，eslint会提示报错
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "no-console": "error", // log 限制

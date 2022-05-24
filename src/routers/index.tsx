@@ -15,14 +15,14 @@ const allRouters = [
     path: '/manage',
     exact: true,
     component: ManagePage,
-    title: 'manage',
+    title: 'manage'
   },
   {
     path: '/login',
     exact: true,
     component: LoginPage,
-    title: 'login',
-  },
+    title: 'login'
+  }
 ]
 
 class AppRouter extends Component {
