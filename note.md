@@ -38,3 +38,7 @@ refactor：重构（即不是新增功能，也不是修改 bug 的代码变动�
 test：增加测试
 chore：构建过程或辅助工具的变动
 ```
+
+### lintstagedrc
+
+--cache 仅仅检查改变过的文件

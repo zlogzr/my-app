@@ -7,3 +7,5 @@
 *.ttf
 *.woff
 *.css
+/build
+/public
