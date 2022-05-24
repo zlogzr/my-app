@@ -7,8 +7,8 @@ const pathResolve = pathUrl => path.join(__dirname, pathUrl)
 module.exports = () => ({
   webpack: {
     alias: {
-      'Pages': pathResolve('./src/pages'), // 配置@ （同时还要配置tsconfig）
-    }
+      Pages: pathResolve('./src/pages'), // 配置@ （同时还要配置tsconfig）
+    },
   },
   plugins: [
     {
@@ -16,7 +16,7 @@ module.exports = () => ({
       options: {
         lessLoaderOptions: {
           lessOptions: {
-            // 修改主题色 
+            // 修改主题色
             modifyVars: { '@primary-color': '#4578FA' },
             javascriptEnabled: true,
           },
@@ -26,8 +26,6 @@ module.exports = () => ({
   ],
   babel: {
     // 支持装饰器模式语法
-    plugins: [
-      ["@babel/plugin-proposal-decorators", { legacy: true }]
-    ]
-  }
+    plugins: [['@babel/plugin-proposal-decorators', { legacy: true }]],
+  },
 })

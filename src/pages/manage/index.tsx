@@ -3,12 +3,6 @@ import './style.less'
 
 const ManagePage = (props: any) => {
   const handleBack = () => {
-    console.log('111')
-    let a = false
-    if (a) {
-      console.log(222)
-      
-    }
     props.history.push('/login')
   }
   return (
