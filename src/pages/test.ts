@@ -1,4 +1,1 @@
-export const person = {
-  name: '小明',
-  age: 18,
-}
+export const a = 1
