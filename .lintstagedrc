@@ -1,4 +1,7 @@
 {
-  "./src/**/*.{ts,tsx}":  ["pretty-quick --staged", "eslint --cache --fix"],
-  "./src/**/*.{less,css}": ["pretty-quick --staged"]
+  "./src/**/*.{ts,tsx}": [
+    "pretty-quick --staged",
+    "eslint --cache --fix"
+  ],
+  "./src/**/*.less": "stylelint --cache --fix --custom-syntax postcss-less"
 }
