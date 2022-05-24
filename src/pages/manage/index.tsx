@@ -9,7 +9,7 @@ const ManagePage = (props: any) => {
     <>
       <div className="manage-page">
         <h2 className="content">this is manage-page</h2>
-        <Button className="backBtn" onClick={handleBack}>
+        <Button className="back-btn" onClick={handleBack}>
           返回
         </Button>
       </div>
